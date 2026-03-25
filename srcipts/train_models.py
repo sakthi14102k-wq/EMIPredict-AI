@@ -1,16 +1,5 @@
 # ══════════════════════════════════════════════════════════════
 #  EMIPredict AI — Model Training Pipeline
-#  File: train_model.py
-#  Fixes applied:
-#    T-BUG-1 : Added average='weighted' to ALL 3 metric functions
-#    T-BUG-2 : Fixed roc_auc_score for multiclass (removed [:,1])
-#    T-BUG-3 : Changed eval_metric='logloss' → 'mlogloss'
-#    T-BUG-4 : Added stratify= to train_test_split
-#    T-WARN-1: Added MAPE to regression metrics
-#    T-WARN-2: Added mlflow.register_model() for best models
-#    T-WARN-3: Added class_weight='balanced' to DecisionTree
-#    T-INFO-1: Added print_summary() comparison table
-#    T-INFO-2: clf_results now stores all metrics, not just f1
 # ══════════════════════════════════════════════════════════════
 
 import pandas as pd
