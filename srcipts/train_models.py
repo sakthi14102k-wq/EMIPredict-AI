@@ -30,8 +30,6 @@ from xgboost import XGBClassifier, XGBRegressor
 # MLflow
 import mlflow
 import mlflow.sklearn
-from mlflow.tracking import MlflowClient
-
 
 class ModelTrain:
     """
