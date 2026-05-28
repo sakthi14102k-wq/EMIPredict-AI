@@ -3,7 +3,7 @@
 # EMIPredict AI - Intelligent Financial Risk Assessment Platform
 
 
-An end-to-end FinTech machine learning platform that dynamically automates financial risk assessment. Built with a unified **Dual-Engine ML architecture**, the system processes a massive dataset of 400,000 credit records to evaluate risk using concurrent **multi-class classification** (EMI Eligibility) and **continuous regression** (Maximum Safe EMI Capacity) pipelines[cite: 1, 4, 8].
+An end-to-end FinTech machine learning platform that dynamically automates financial risk assessment. Built with a unified **Dual-Engine ML architecture**, the system processes a massive dataset of 400,000 credit records to evaluate risk using concurrent **multi-class classification** (EMI Eligibility) and **continuous regression** (Maximum Safe EMI Capacity) pipelines
 
 ---
 
