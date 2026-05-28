@@ -40,4 +40,4 @@ MLflow Tracking Server & Versioned Model Registry (mlflow UI)
         ↓
 Multi-Page Production UI Layer (app.py, home.py, predictor.py, eda.py, admin_page.py)
         ↓
-Streamlit Cloud Deployment with Automated CI/CD
+Streamlit Cloud Deployment
