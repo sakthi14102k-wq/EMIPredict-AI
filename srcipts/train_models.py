@@ -1,5 +1,5 @@
 # ══════════════════════════════════════════════════════════════
-#  EMIPredict AI — Model Training Pipeline
+#  EMIPredict AI
 # ══════════════════════════════════════════════════════════════
 
 import pandas as pd
@@ -172,7 +172,7 @@ class ModelTrain:
                 })
                 mlflow.sklearn.log_model(model, f'clf_{name}')
 
-                # FIX T-INFO-2: store ALL metrics, not just f1
+                # store ALL metrics, not just f1
                 self.clf_results[name] = {
                     'model'    : model,
                     'run_id'   : run.info.run_id,
@@ -202,7 +202,7 @@ class ModelTrain:
         joblib.dump(self.best_clf_model, clf_path)
         print(f"  💾 Saved → {clf_path}")
 
-        # FIX T-WARN-2: Register best model in MLflow Model Registry
+        # Register best model in MLflow Model Registry
         try:
             mlflow.register_model(
                 model_uri=f"runs:/{self.best_clf_run_id}/clf_{best_name}",
