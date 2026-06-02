@@ -1,5 +1,5 @@
 # ══════════════════════════════════════════════════════════════
-#  EMIPredict AI — Model Training Pipeline
+#  EMIPredict AI
 # ══════════════════════════════════════════════════════════════
 
 import pandas as pd
@@ -35,7 +35,7 @@ class ModelTrain:
     """
     Full ML training pipeline for EMIPredict AI.
 
-    Trains 4 Classification models and 4 Regression models,
+    Trains Classification models and Regression models,
     logs everything to MLflow, selects and registers best models,
     then saves them as .pkl files.
 
@@ -97,7 +97,7 @@ class ModelTrain:
 
     def train_classification_models(self):
         """
-        Trains 4 classifiers, evaluates with weighted multiclass metrics,
+        Trains classifiers, evaluates with weighted multiclass metrics,
         logs all runs to MLflow, then selects the best by F1 score.
         """
 
@@ -172,7 +172,7 @@ class ModelTrain:
                 })
                 mlflow.sklearn.log_model(model, f'clf_{name}')
 
-                # FIX T-INFO-2: store ALL metrics, not just f1
+                # store ALL metrics, not just f1
                 self.clf_results[name] = {
                     'model'    : model,
                     'run_id'   : run.info.run_id,
@@ -202,7 +202,7 @@ class ModelTrain:
         joblib.dump(self.best_clf_model, clf_path)
         print(f"  💾 Saved → {clf_path}")
 
-        # FIX T-WARN-2: Register best model in MLflow Model Registry
+        # Register best model in MLflow Model Registry
         try:
             mlflow.register_model(
                 model_uri=f"runs:/{self.best_clf_run_id}/clf_{best_name}",
@@ -219,7 +219,7 @@ class ModelTrain:
    
     def train_regression_models(self):
         """
-        Trains 4 regressors, evaluates with RMSE/MAE/R²/MAPE,
+        Trains regressors, evaluates with RMSE/MAE/R²/MAPE,
         logs all runs to MLflow, then selects the best by RMSE.
         """
 
